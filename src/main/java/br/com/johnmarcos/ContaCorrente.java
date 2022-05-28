@@ -70,7 +70,7 @@ public class ContaCorrente {
 		}
 	} 
 	
-// Método para validar se um objeto transação não contém objeto um saque ou depósito
+// Método para validar se um objeto transação não contém um objeto herança saque ou depósito
 // ou se está com o caractere tipoDeTransacao errado
 
 
