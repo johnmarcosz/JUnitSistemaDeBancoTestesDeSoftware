@@ -8,7 +8,7 @@ public class ContaCorrente {
 	private static int contadorIdContaCorrente = 0;
 	private final PessoaFisica titularDaConta;
 	private double saldo = 0;
-	private String tipoDeConta = "Conta de Pessoa Física";
+	private String tipoDeConta = "Conta de Pessoa FÃ­sica";
 	private ArrayList<Transacao> transacoesRealizadas = new ArrayList<Transacao>();
 	
 // Construtoress
@@ -19,7 +19,7 @@ public class ContaCorrente {
 		this.idContaCorrente = contadorIdContaCorrente++;
 	}
 	
-// Método para imprimir valores (GET)
+// MÃ©todo para imprimir valores (GET)
 	
 	public String getNomeTitularDaConta() {
 		return this.titularDaConta.getNome();
@@ -53,25 +53,25 @@ public class ContaCorrente {
 		return transacoesRealizadas;
 	}
 	
-// Método para consultar transações realizadas
+// MÃ©todo para consultar transaÃ§Ãµes realizadas
 	
 	public void consultarTransacoes() {
 		
 		if( this.transacoesRealizadas.isEmpty() ) {
-			System.out.println("Nenhuma transação existente.\n");
+			System.out.println("Nenhuma transaÃ§Ã£o existente.\n");
 			return;
 		
 		} else {
 			
 			for(Transacao transacao : this.transacoesRealizadas)
 				System.out.println(
-					"\nTipo de Transação: " + transacao.getTipoDeTransacao()
+					"\nTipo de TransaÃ§Ã£o: " + transacao.getTipoDeTransacao()
 					+ "\nValor: " + transacao.getValorDaTransacao());
 		}
 	} 
 	
-// Método para validar se um obejto transação não contém objeto um saque ou depósito
-// ou se está com o caractere tipoDeTransacao errado
+// MÃ©todo para validar se um objeto transaÃ§Ã£o nÃ£o contÃ©m objeto um saque ou depÃ³sito
+// ou se estÃ¡ com o caractere tipoDeTransacao errado
 
 
 	public boolean transacaoEhValida(char tipoDeTransacao, Transacao transacao) {
@@ -93,20 +93,20 @@ public class ContaCorrente {
 		}
 	}
 	
-// Método para registrar transação bem sucedida no cadastro de Pessoa
+// MÃ©todo para registrar transaÃ§Ã£o bem sucedida no cadastro de Pessoa
 	
 	public void registraTransacao(char tipoDeTransacao, Transacao transacao) {
 		this.transacoesRealizadas.add(transacao);
 	}
 	
-// Método para saque
+// MÃ©todo para saque
 	public boolean saqueContaCorrente(double valorASacar) throws Exception {
 		
 		if(valorASacar > this.saldo){
 			throw new Exception("Saldo insuficiente.\nSaldo = R$ " + this.saldo );
 		
 		} else if(valorASacar <= 0){
-			throw new Exception("O valor de saque não pode ser zero ou menos.");
+			throw new Exception("O valor de saque nÃ£o pode ser zero ou menos.");
 		
 		} else {
 			Saque saque = new Saque(this, valorASacar);
@@ -120,18 +120,18 @@ public class ContaCorrente {
 				return true;
 			
 			} else {
-				System.out.println("Erro, transação inválida. Nenhuma operação foi concluída.");
+				System.out.println("Erro, transaÃ§Ã£o invÃ¡lida. Nenhuma operaÃ§Ã£o foi concluÃ­da.");
 				saque = null;
 				return false;
 			}
 		}
 	}
 
-// Método para depósito
+// MÃ©todo para depÃ³sito
 	public boolean depositoContaCorrente(double valorADepositar) throws Exception {
 		
 		if(valorADepositar <= 0){
-			throw new Exception("O valor de depósito não pode ser zero ou menos.");
+			throw new Exception("O valor de depÃ³sito nÃ£o pode ser zero ou menos.");
 		
 		} else {
 			Deposito deposito = new Deposito(this, valorADepositar);
@@ -141,11 +141,11 @@ public class ContaCorrente {
 				this.saldo += valorADepositar;
 				registraTransacao(deposito.getTipoDeTransacao(), deposito);
 				
-				System.out.println("Depósito efetuado com sucesso.\nSaldo = R$ " + this.saldo );
+				System.out.println("DepÃ³sito efetuado com sucesso.\nSaldo = R$ " + this.saldo );
 				return true;
 			
 			} else {
-				System.out.println("Erro, transação inválida. Nenhuma operação foi concluída.");
+				System.out.println("Erro, transaÃ§Ã£o invÃ¡lida. Nenhuma operaÃ§Ã£o foi concluÃ­da.");
 				deposito = null;
 				return false;
 			}
