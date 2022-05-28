@@ -1,0 +1,25 @@
+assertEquals -> PessoaFisicaTest
+
+assertNotEquals -> PessoaFisicaTest
+
+assertNull -> ContaCorrenteTest
+
+assertThrows -> PessoaFisicaTest
+
+Agrupamento de assertions -> PessoaFisicaTest
+
+@BeforeEach -> PessoaFisicaTest e ContaCorrenteTest
+
+@AfterEach -> PessoaFisicaTest e ContaCorrenteTest
+
+@BeforeAll -> PessoaFisicaTest e ContaCorrenteTest
+
+@AfterAll -> PessoaFisicaTest e ContaCorrenteTest
+
+@Disable -> ContaCorrenteTest
+
+@Timeout
+
+assumeFalse -> ContaCorrenteTest
+
+assumeTrue -> ContaCorrenteTest

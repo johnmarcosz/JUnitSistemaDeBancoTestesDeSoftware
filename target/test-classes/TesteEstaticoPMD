@@ -1,0 +1,5 @@
+AvoidThrowingNullPointerException - Main
+AvoidThrowingRawExceptionTypes - PessoaFisica
+IfElseStmtsMustUseBraces - Main
+OnlyOneReturn - ContaCorrente 120
+RedundantFieldInitializer - ContaCorrente 10
